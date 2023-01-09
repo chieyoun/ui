@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .inp {
+        width: 150px;
+        height: 20px;
+        margin-bottom: 5px;
+      }
+      .btn {
+        width: 58px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fal">
+      <input
+        type="text"
+        class="inp"
+        name="e-mail"
+        placeholder="email"
+        onchange="valuesChange()"
+      /><br />
+      <input
+        type="password"
+        class="inp"
+        name="password"
+        placeholder="password"
+        onchange="valuesChange()"
+      /><br />
+
+      <button class="btn">submit</button>
+      <script>
+        var nexistV = new Boolean(true);
+        var btn = document.querySelector(".btn");
+        var pos;
+        function valuesChange() {
+          var email = document.getElementsByName("e-mail").values;
+          var password = document.getElementsByName("password").values;
+          email == "" || password == "" ? (nexistV = true) : (nexistV = false);
+        }
+
+        console.log("ss");
+        btn.addEventListener("mouseover", function () {
+          pos ? (pos = 0) : (pos = 100);
+          if (nexistV) {
+            btn.style.transform = `translate(${pos}px, 0px)`;
+            btn.style.transition = "all 0.3s ease";
+          }
+        });
+      </script>
+    </div>
+    <iframe
+      id="inlineFrameExample"
+      title="Inline Frame Example"
+      width="600"
+      height="700"
+      src=""
+    >
+    </iframe>
+  </body>
+</html>
